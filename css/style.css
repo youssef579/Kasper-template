@@ -19,7 +19,7 @@ html {
 }
 
 body {
-    background-color: #000;
+    background-color: #fff;
     font-family: 'Open Sans', sans-serif;
 }
 
@@ -30,6 +30,52 @@ ul {
 a {
     text-transform: capitalize;
     text-decoration: none;
+}
+
+.special-heading {
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: normal;
+    font-size: 40px;
+    margin-bottom: 70px;
+}
+
+.special-heading::before, .special-heading::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 180px;
+}
+
+.special-heading::after {
+    background-color: #333;
+    width: 125px;
+    height: 2px;
+}
+
+.special-heading::before {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: 2px solid #333;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    z-index: 2;
+}
+
+.special-heading + p {
+    width: 550px;
+    margin: 0 auto 100px;
+    max-width: 100%;
+    line-height: 2;
+    color: #777;
+    text-align: center;
+}
+
+section {
+    position: relative;
+    padding: var(--section-padding) 0;
 }
 
 .container {
@@ -142,7 +188,8 @@ header img[alt="Logo"] {
 
 @media (max-width: 767px) {
     header .container {
-        width: 100vw;
+        width: calc(100vw - 20px);
+        height: 85px;
     }
 
     header nav ul {
@@ -272,5 +319,40 @@ main .arrow {
 
     main .arrow {
         display: none;
+    }
+}
+
+/* Services section */
+.services .container .content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 60px 40px;
+}
+
+.services .container .content .service {
+    display: flex;
+    gap: 50px;
+}
+
+.services .container .content .service h3 {
+    color: var(--main-color);
+    margin-bottom: 30px;
+}
+
+.services .container .content .service p {
+    line-height: 2;
+    color: #777;
+}
+
+@media (max-width: 767px) {
+    .services .container .content {
+        grid-template-columns: 100%;
+        row-gap: 30px;
+    }
+
+    .services .container .content .service {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
     }
 }
