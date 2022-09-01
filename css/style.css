@@ -403,7 +403,6 @@ main .arrow {
     left: 50%;
     transform: translateX(-50%);
     position: absolute;
-    bottom: -200px;
 }
 
 @media (max-width: 767px) {
@@ -441,7 +440,7 @@ main .arrow {
     display: grid;
     justify-content: center;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 15px;
+    gap: 10px;
 }
 
 .portfolio .image {
@@ -450,10 +449,12 @@ main .arrow {
 }
 
 .portfolio .caption {
+    left: 0;
     width: 100%;
     background-color: #fff;
-    transition: transform 0.3s;
+    transition: bottom 0.3s;
     position: absolute;
+    bottom: -70px;
     padding: 15px 20px;
 }
 
@@ -477,7 +478,7 @@ main .arrow {
 }
 
 .portfolio .image:hover .caption {
-    transform: translateY(-73px);
+    bottom: 0;
 }
 
 .portfolio a, .video .content a {
@@ -547,4 +548,25 @@ main .arrow {
 .video .content a {
     background-color: #000;
     padding: 10px 15px;
+}
+
+/* About Section */
+.about {
+    padding-bottom: 0;
+    text-align: center;
+    overflow: hidden;
+}
+
+.about img {
+    position: relative;
+    max-width: 100%;
+    margin-top: -120px;
+    bottom: -120px;
+}
+
+@media (max-width: 767px) {
+    .about img {
+        margin-top: -60px;
+        bottom: -60px;
+    }
 }
