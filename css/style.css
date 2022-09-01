@@ -189,7 +189,7 @@ header img[alt="Logo"] {
 @media (max-width: 767px) {
     header .container {
         width: calc(100vw - 20px);
-        height: 85px;
+        height: 80px;
     }
 
     header nav ul {
@@ -223,7 +223,7 @@ main {
     position: relative;
 }
 
-main::after {
+main::after, .design::after {
     content: '';
     position: absolute;
     left: 0;
@@ -354,5 +354,64 @@ main .arrow {
         flex-direction: column;
         text-align: center;
         gap: 30px;
+    }
+}
+
+/* Design Features */
+.design {
+    background: url("../images/design-features.jpg") no-repeat center;
+    background-size: cover;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: relative;
+    height: 600px;
+    overflow: hidden;
+}
+
+.design > * {
+    flex: 1;
+    position: relative;
+    z-index: 1;
+}
+
+.design article {
+    padding: 50px;
+    color: #fff;
+    background-color: var(--transparent-color);
+}
+
+.design article h2 {
+    font-weight: normal;
+    margin-bottom: 40px;
+}
+
+.design article ul {
+    line-height: 3;
+}
+
+.design article i {
+    margin-right: 20px;
+}
+
+.design .image {
+    height: 100%;
+    position: relative;
+}
+
+.design img {
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    bottom: -200px;
+}
+
+@media (max-width: 767px) {
+    .design .image {
+        display: none;
+    }
+
+    .design article {
+        padding: 50px 20px;
     }
 }
