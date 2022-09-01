@@ -287,7 +287,7 @@ main .arrow {
     right: 20px;
 }
 
-.bullets {
+main .bullets {
     position: absolute;
     bottom: 30px;
     display: flex;
@@ -296,23 +296,24 @@ main .arrow {
     transform: translateX(-50%);
 }
 
-.bullets li {
+main .bullets li {
     cursor: pointer;
     width: 20px;
     height: 20px;
     border-radius: 50%;
 }
 
-.bullets li:nth-of-type(odd) {
+main .bullets li:nth-of-type(odd) {
     border: 1px solid #fff;
 }
 
-.bullets li:nth-of-type(even) {
+main .bullets li:nth-of-type(even) {
     background-color: var(--main-color);
 }
 
 @media (max-width: 767px) {
     main .container {
+        padding: 20px;
         width: 100%;
         justify-content: flex-start;
     }
@@ -628,4 +629,146 @@ main .arrow {
     flex-wrap: wrap;
     display: flex;
     justify-content: space-between;
+}
+
+/* Skills section */
+.our-skills .container {
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+}
+
+.our-skills .container > * {
+    flex: 1;
+}
+
+.our-skills h2 {
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: normal;
+    font-size: 1.3em;
+    margin-bottom: 30px;
+}
+
+.our-skills h2+p {
+    text-align: center;
+    color: #777;
+    line-height: 2;
+    margin-bottom: 60px;
+}
+
+.our-skills .testimonials .person {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.our-skills .testimonials .person img {
+    border-radius: 50%;
+    width: 100px;
+}
+
+.our-skills .testimonials .person article {
+    line-height: 1.8;
+    border-bottom: 1px solid #ccc;
+
+}
+
+.our-skills .testimonials .person article p:last-child {
+    text-align: right;
+    color: #777;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.our-skills .bullets {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.our-skills .bullets li {
+    border-radius: 100%;
+    width: 15px;
+    height: 15px;
+}
+
+.our-skills .bullets li:nth-of-type(odd) {
+    border: 1px solid #aaa;
+}
+
+.our-skills .bullets li:nth-of-type(even) {
+    background-color: var(--main-color);
+}
+
+.our-skills .skills .content {
+    display: grid;
+    gap: 40px;
+}
+
+.our-skills .skills .skill p {
+    text-indent: 10px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.progress {
+    width: 100%;
+    height: 30px;
+    background-color: #dedadc;
+    border-radius: 20px;
+}
+
+.progress .value {
+    position: relative;
+    height: 100%;
+    border-radius: 20px;
+    background-color: var(--main-color);
+    transition: width 0.3s;
+}
+
+.progress .value[data-val="90%"] {
+    width: 90%;
+}
+
+.progress .value[data-val="80%"] {
+    width: 80%;
+}
+
+.progress .value[data-val="85%"] {
+    width: 85%;
+}
+
+.progress .value::before {
+    content: attr(data-val);
+    position: absolute;
+    bottom: 45px;
+    right: 0;
+    transform: translateX(40%);
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #000;
+    color: #fff;
+}
+
+.progress .value::after {
+    content: '';
+    bottom: 30px;
+    right: -4px;
+    position: absolute;
+    border-width: 8px;
+    border-style: solid;
+    border-color: #000 transparent transparent transparent;
+}
+
+@media (max-width: 991px) {
+    .our-skills .container {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .our-skills .testimonials .person {
+        gap: 30px;
+    }
 }
