@@ -227,7 +227,8 @@ main {
 main::after,
 .design::after,
 .video::after,
-.stats::after {
+.stats::after,
+.quote::after {
     content: '';
     position: absolute;
     left: 0;
@@ -771,4 +772,27 @@ main .bullets li:nth-of-type(even) {
     .our-skills .testimonials .person {
         gap: 30px;
     }
+}
+
+/* Quote section */
+.quote {
+    background: url('../images/quote.jpg');
+    background-size: cover;
+}
+
+.quote::after {
+    background-color: rgba(0 0 0 / 70%);
+}
+
+.quote .container {
+    display: grid;
+    gap: 20px;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    color: #fff;
+}
+
+.quote q {
+    font-size: 1.8em;
 }
