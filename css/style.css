@@ -796,6 +796,14 @@ main .bullets li:nth-of-type(even) {
     }
 }
 
+
+@media (max-width: 767px) {
+    .our-skills .testimonials .person {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+}
 /* Quote section */
 .quote {
     background: url('../images/quote.jpg');
@@ -912,7 +920,7 @@ main .bullets li:nth-of-type(even) {
 }
 
 /* Subscribe section */
-.subscribe {
+.subscribe, footer {
     background: url('../images/subscribe.jpg') no-repeat;
     background-size: cover;
 }
@@ -1026,6 +1034,7 @@ textarea {
 .contact .info h3 {
     text-transform: uppercase;
     font-weight: normal;
+    margin-top: 65px;
     margin-bottom: 10px;
 }
 
@@ -1048,6 +1057,58 @@ textarea {
     }
 
     .contact .info h3 {
-        margin-top: 0 !important;
+        margin-top: 20px;
     }
+
+    .contact .info h3:first-child {
+        margin-top: 0;
+    }
+}
+
+/* Footer section */
+footer {
+    position: relative;
+    padding: 50px 0;
+}
+
+footer .overlay {
+    top: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0 0 0 / 60%);
+}
+
+footer .container {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    color: #fff;
+}
+
+footer .container h2 {
+    font-size: 22px;
+    margin: 40px auto 30px;
+    width: fit-content;
+    text-transform: uppercase;
+    font-weight: normal;
+    padding: 20px;
+    border-bottom: 1px solid #fff;
+}
+
+footer .container ul {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+footer .container li {
+    cursor: pointer;
+    font-size: 20px;
+}
+
+footer span {
+    color: var(--main-color);
+    font-weight: bold;
 }
