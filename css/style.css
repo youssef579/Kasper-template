@@ -504,7 +504,8 @@ main .bullets li:nth-of-type(even) {
 
 .portfolio a,
 .video .content a,
-.plans + h4 + a {
+.plans + h4 + a,
+.contact input[type="submit"] {
     text-transform: uppercase;
     display: block;
     width: fit-content;
@@ -977,5 +978,76 @@ main .bullets li:nth-of-type(even) {
 
     .subscribe p {
         text-align: center;
+    }
+}
+
+/* Contact section */
+.contact .content {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-direction: row-reverse;
+}
+
+.contact :is(input:not([type="submit"]), textarea) {
+    outline: none;
+    border: 1px solid #ccc;
+    width: 100%;
+    padding: 20px;
+}
+
+textarea {
+    resize: none;
+    height: 200px;
+}
+
+.contact form {
+    width: 80%;
+    display: flex;
+    gap: 30px;
+    flex-direction: column;
+}
+
+.contact input[type="submit"] {
+    border-radius: 0;
+    border: none;
+    cursor: pointer;
+    margin: 0;
+}
+
+.contact .info {
+    line-height: 2;
+}
+
+.contact :is(p, address) {
+    color: #777;
+}
+
+.contact .info h3 {
+    text-transform: uppercase;
+    font-weight: normal;
+    margin-bottom: 10px;
+}
+
+.contact .info h3:first-child {
+    margin-top: 15px;
+}
+
+@media (max-width: 767px) {
+    .contact .content {
+        flex-direction: column;
+        align-items: center;       
+    }
+
+    .contact .info {
+        text-align: center;
+    }
+
+    .contact form {
+        width: 100%;
+    }
+
+    .contact .info h3 {
+        margin-top: 0 !important;
     }
 }
