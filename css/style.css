@@ -228,7 +228,8 @@ main::after,
 .design::after,
 .video::after,
 .stats::after,
-.quote::after {
+.quote::after,
+.subscribe::after {
     content: '';
     position: absolute;
     left: 0;
@@ -907,4 +908,74 @@ main .bullets li:nth-of-type(even) {
 
 .plans + h4 + a {
     text-transform: capitalize;
+}
+
+/* Subscribe section */
+.subscribe {
+    background: url('../images/subscribe.jpg') no-repeat;
+    background-size: cover;
+}
+
+.subscribe .container {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 40px;
+    align-items: center;
+    color: #fff;
+    position: relative;
+    z-index: 1;
+}
+
+.subscribe form {
+    position: relative;
+    display: flex;
+    border: 1px solid #fff;
+}
+
+.subscribe i {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 25px;
+    color: #fff;
+    font-size: 20px;
+}
+
+.subscribe form input[type="email"] {
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    caret-color: var(--main-color);
+    color: #fff;
+    padding: 20px 15px 20px 60px;
+}
+
+.subscribe form input[type="email"]::placeholder {
+    color: #fff;
+    font-weight: 500;
+}
+
+.subscribe form input[type="submit"] {
+    cursor: pointer;
+    color: #fff;
+    background-color: var(--main-color);
+    border: none;
+    outline: none;
+    padding: 20px;
+}
+
+.subscribe p {
+    line-height: 2;
+}
+
+@media (max-width: 991px) {
+    .subscribe .container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .subscribe p {
+        text-align: center;
+    }
 }
